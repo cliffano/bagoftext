@@ -1,0 +1,42 @@
+{
+  "name": "bagoftext",
+  "description": "A bag-of-holding containing text utility functions.",
+  "keywords": [
+    "l10n",
+    "text"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://github.com/cliffano/bagoftext",
+  "author": "Cliffano Subagio <blah@cliffano.com> (http://blog.cliffano.com)",
+  "contributors": [
+    "All contributors (https://github.com/cliffano/bagoftext/graphs/contributors)"
+  ],
+  "main": "./lib/bagoftext",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cliffano/bagoftext.git"
+  },
+  "bugs": {
+    "url": "http://github.com/cliffano/bagoftext/issues"
+  },
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "dependencies": {
+    "i18n": "~0.4.1"
+  },
+  "devDependencies": {
+    "buster": "~0.6.12"
+  },
+  "scripts": {},
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/cliffano/bagoftext/raw/master/LICENSE"
+    }
+  ]
+}
