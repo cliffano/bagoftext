@@ -60,6 +60,16 @@ buster.testCase('text - initLocales', {
   }
 });
 
+buster.testCase('text - setLocale', {
+  setUp: function () {
+    this.mockI18n = this.mock(i18n);
+  },
+  'should delegate to i18n#setLocale': function () {
+    this.mockI18n.expects('setLocale').withExactArgs('de');
+    bag.setLocale('de');
+  }
+});
+
 buster.testCase('text - __', {
   setUp: function () {
     this.mockI18n = this.mock(i18n);
