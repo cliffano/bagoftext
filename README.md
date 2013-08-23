@@ -25,6 +25,13 @@ or as a dependency in package.json file:
 Usage
 -----
 
-    var bag = require('bagoftext');
+Localisation.
 
-    TODO
+    var text = require('bagoftext');
+
+    text.initLocales({
+      defaultLocale: 'id',
+      dir: 'path/to/locales/'
+    });
+    text.setLocale('en');
+    text.__('Hello %s %s', 'FirstName', 'LastName');
