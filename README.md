@@ -25,7 +25,7 @@ or as a dependency in package.json file:
 Usage
 -----
 
-Localisation.
+Localisation:
 
     var text = require('bagoftext');
 
