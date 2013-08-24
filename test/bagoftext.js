@@ -7,56 +7,52 @@ buster.testCase('text - initLocales', {
   setUp: function () {
     this.mockFs = this.mock(fs);
     this.mockI18n = this.mock(i18n);
-    this.mockProcess = this.mock(process);
   },
   'should configure and set current locale based on LANG environment variable': function () {
-    this.mockProcess.expects('cwd').withExactArgs().returns('somedir');
-    this.mockFs.expects('readdirSync').withExactArgs('somedir/conf/locales').returns(['en.json', 'id.json']);
+    this.mockFs.expects('readdirSync').withExactArgs('conf/locales/').returns(['en.json', 'id.json']);
     this.stub(process, 'env', { LANG: 'en_AU.UTF-8' });
     this.mockI18n.expects('configure').withExactArgs({
       locales: ['en', 'id'],
       defaultLocale: 'en',
-      directory: 'somedir/conf/locales',
+      directory: 'conf/locales/',
       updateFiles: false
     });
     this.mockI18n.expects('setLocale').withExactArgs('en');
-    bag.initLocales();
+    bag.initLocales('somebasedir');
   },
   'should configure and set default locale opt when provided, and use dir opt': function () {
-    this.mockFs.expects('readdirSync').withExactArgs('somelocalesdir').returns(['en.json', 'id.json']);
+    this.mockFs.expects('readdirSync').withExactArgs('somebasedir/somelocalesdir').returns(['en.json', 'id.json']);
     this.stub(process, 'env', { LANG: 'en_AU.UTF-8' });
     this.mockI18n.expects('configure').withExactArgs({
       locales: ['en', 'id'],
       defaultLocale: 'id',
-      directory: 'somelocalesdir',
+      directory: 'somebasedir/somelocalesdir',
       updateFiles: false
     });
     this.mockI18n.expects('setLocale').withExactArgs('en');
-    bag.initLocales({ defaultLocale: 'id', dir: 'somelocalesdir' });
+    bag.initLocales('somebasedir', { defaultLocale: 'id', localesDir: 'somelocalesdir' });
   },
   'should not set locale when environment variable is not available': function () {
-    this.mockProcess.expects('cwd').withExactArgs().returns('somedir');
-    this.mockFs.expects('readdirSync').withExactArgs('somedir/conf/locales').returns(['en.json', 'id.json']);
+    this.mockFs.expects('readdirSync').withExactArgs('conf/locales/').returns(['en.json', 'id.json']);
     this.stub(process, 'env', { LANG: undefined });
     this.mockI18n.expects('configure').withExactArgs({
       locales: ['en', 'id'],
       defaultLocale: 'id',
-      directory: 'somedir/conf/locales',
+      directory: 'conf/locales/',
       updateFiles: false
     });
-    bag.initLocales({ defaultLocale: 'id' });
+    bag.initLocales('somebasedir', { defaultLocale: 'id' });
   },
   'should not set locale when environment variable locale is not available': function () {
-    this.mockProcess.expects('cwd').withExactArgs().returns('somedir');
-    this.mockFs.expects('readdirSync').withExactArgs('somedir/conf/locales').returns(['id.json']);
+    this.mockFs.expects('readdirSync').withExactArgs('conf/locales/').returns(['id.json']);
     this.stub(process, 'env', { LANG: 'en_AU.UTF-8' });
     this.mockI18n.expects('configure').withExactArgs({
       locales: ['id'],
       defaultLocale: 'id',
-      directory: 'somedir/conf/locales',
+      directory: 'conf/locales/',
       updateFiles: false
     });
-    bag.initLocales({ defaultLocale: 'id' });
+    bag.initLocales('somebasedir', { defaultLocale: 'id' });
   }
 });
 

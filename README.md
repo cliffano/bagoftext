@@ -29,9 +29,9 @@ Localisation:
 
     var text = require('bagoftext');
 
-    text.initLocales({
+    text.initLocales(__dirname, {
       defaultLocale: 'id',
-      dir: 'path/to/locales/'
+      localesDir: 'path/to/locales/'
     });
     text.setLocale('en');
     text.__('Hello %s %s', 'FirstName', 'LastName');
