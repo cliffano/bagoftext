@@ -1,7 +1,9 @@
-var buster = require('buster'),
+var buster = require('buster-node'),
   bag = require('../lib/bagoftext'),
   fs = require('fs'),
-  i18n = require('i18n');
+  i18n = require('i18n'),
+  referee = require('referee'),
+  assert = referee.assert;
 
 buster.testCase('text - initLocales', {
   setUp: function () {
