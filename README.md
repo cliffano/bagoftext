@@ -25,13 +25,23 @@ or as a dependency in package.json file:
 Usage
 -----
 
+    var text = require('bagoftext');
+    
 Localisation:
 
-    var text = require('bagoftext');
-
+    // initialise default locale and the location of locale files
     text.initLocales(__dirname, {
-      defaultLocale: 'id',
+      defaultLocale: 'en',
       localesDir: 'path/to/locales/'
     });
-    text.setLocale('en');
-    text.__('Hello %s %s', 'FirstName', 'LastName');
+
+    // display 'Hello Homer Simpson'
+    console.log(text.__('Hello %s %s', 'Homer', 'Simpson'));
+
+    // switch locale to spanish
+    text.setLocale('es');
+
+    // assuming there's a path/to/locales/es.json locale file
+    // containing { 'Hello %s %s': 'Hola %s %s' }
+    // then display 'Hola Homer Simpson'
+    console.log(text.__('Hello %s %s', 'Homer', 'Simpson'));
