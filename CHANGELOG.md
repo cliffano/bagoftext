@@ -1,5 +1,5 @@
-### 0.0.4-pre
-*
+### 0.1.0-pre
+* Set min node engine to 0.10.0
 
 ### 0.0.3
 * Change test lib to buster-node + referee
