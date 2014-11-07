@@ -4,6 +4,9 @@ var buster = require('buster-node'),
   assert = referee.assert;
 
 buster.testCase('text - locale', {
+  setUp: function () {
+    this.mock({});
+  },
   'should return text based on locale': function () {
     bag.initLocales(__dirname, {
       defaultLocale: 'en',
