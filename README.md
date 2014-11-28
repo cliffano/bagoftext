@@ -46,3 +46,8 @@ Localisation:
     // containing { 'Hello %s %s': 'Hola %s %s' }
     // then display 'Hola Homer Simpson'
     console.log(text.__('Hello %s %s', 'Homer', 'Simpson'));
+
+Colophon
+--------
+
+[Developer's Guide](http://cliffano.github.io/developers_guide.html#nodejs)
