@@ -2,8 +2,8 @@
 
 [![Build Status](https://img.shields.io/travis/cliffano/bagoftext.svg)](http://travis-ci.org/cliffano/bagoftext)
 [![Dependencies Status](https://img.shields.io/david/cliffano/bagoftext.svg)](http://david-dm.org/cliffano/bagoftext)
-[![Coverage Status](https://coveralls.io/repos/cliffano/bagoftext/badge.png?branch=master)](https://coveralls.io/r/cliffano/bagoftext?branch=master)
-[![Published Version](https://badge.fury.io/js/bagoftext.png)](http://badge.fury.io/js/bagoftext)
+[![Coverage Status](https://img.shields.io/coveralls/cliffano/bagoftext.svg)](https://coveralls.io/r/cliffano/bagoftext?branch=master)
+[![Published Version](https://img.shields.io/npm/v/bagoftext.svg)](http://www.npmjs.com/package/bagoftext)
 <br/>
 [![npm Badge](https://nodei.co/npm/bagoftext.png)](http://npmjs.org/package/bagoftext)
 
