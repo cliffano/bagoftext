@@ -37,23 +37,11 @@ buster.testCase('text - initLocales', {
   'should not set locale when environment variable is not available': function () {
     this.mockFs.expects('readdirSync').withExactArgs('conf/locales/').returns(['en.json', 'id.json']);
     this.stub(process, 'env', { LANG: undefined });
-    this.mockI18n.expects('configure').withExactArgs({
-      locales: ['en', 'id'],
-      defaultLocale: 'id',
-      directory: 'conf/locales/',
-      updateFiles: false
-    });
     bag.initLocales('somebasedir', { defaultLocale: 'id' });
   },
   'should not set locale when environment variable locale is not available': function () {
     this.mockFs.expects('readdirSync').withExactArgs('conf/locales/').returns(['id.json']);
     this.stub(process, 'env', { LANG: 'en_AU.UTF-8' });
-    this.mockI18n.expects('configure').withExactArgs({
-      locales: ['id'],
-      defaultLocale: 'id',
-      directory: 'conf/locales/',
-      updateFiles: false
-    });
     bag.initLocales('somebasedir', { defaultLocale: 'id' });
   }
 });
