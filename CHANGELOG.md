@@ -1,3 +1,6 @@
+### 0.1.3
+*
+
 ### 0.1.2-pre
 * Set min node engine to 4.0.0
 * Set default locale when locale is not set
