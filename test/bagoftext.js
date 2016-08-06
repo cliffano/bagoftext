@@ -69,4 +69,3 @@ buster.testCase('text - __', {
     assert.equals(bag.__('name %s, age %d'), 'nama %s, umur %d');
   }
 });
-
