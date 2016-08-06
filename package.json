@@ -24,7 +24,7 @@
     "test": "./test"
   },
   "dependencies": {
-    "i18n": "^0.6.0"
+    "i18n": "^0.8.3"
   },
   "devDependencies": {
     "buster-node": "^0.7.1",
